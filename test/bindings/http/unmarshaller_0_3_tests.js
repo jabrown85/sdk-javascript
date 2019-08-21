@@ -9,6 +9,7 @@ const webhook     = "https://cloudevents.io/webhook";
 const contentType = "application/cloudevents+json; charset=utf-8";
 const now         = new Date();
 const schemaurl   = "http://cloudevents.io/schema.json";
+const subject     = "mynewfile.jpg"
 
 const ceContentType = "application/json";
 
@@ -122,6 +123,7 @@ describe("HTTP Transport Binding Unmarshaller for CloudEvents v0.3", () => {
           .time(now)
           .schemaurl(schemaurl)
           .data(data)
+          .subject(subject)
           .toString();
 
       var headers = {
